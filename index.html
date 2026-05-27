@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team INSENSIBLE</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#000;color:white;}
+header{background:#0a0a0a;padding:20px;border-bottom:2px solid gold;display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;}
+header img{width:70px;height:70px;border-radius:15px;}
+header h1{color:gold;font-size:32px;}
+.hero{padding:80px 20px;text-align:center;}
+.hero h2{font-size:52px;color:gold;margin-bottom:20px;}
+.hero p{max-width:700px;margin:auto;line-height:1.8;color:#ccc;}
+.players{padding:50px 20px;}
+.players h2,.add-player h2{text-align:center;color:gold;font-size:42px;margin-bottom:40px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;max-width:1200px;margin:auto;}
+.card{background:#111;border:1px solid #333;border-radius:20px;overflow:hidden;}
+.card img{width:100%;height:250px;object-fit:cover;}
+.card-content{padding:20px;}
+.card-content h3{color:gold;margin-bottom:10px;}
+.card-content p{color:#bbb;line-height:1.7;font-size:14px;}
+.add-player{padding:60px 20px;background:#080808;}
+.form{max-width:800px;margin:auto;display:grid;gap:15px;}
+input{padding:15px;border:none;border-radius:12px;background:#111;color:white;border:1px solid #333;}
+button{padding:15px;background:gold;color:black;font-weight:bold;border:none;border-radius:12px;cursor:pointer;}
+footer{padding:25px;text-align:center;border-top:1px solid #222;color:#777;margin-top:40px;}
+</style>
+</head>
+<body>
+
+<header>
+<img src="logo.png">
+<div>
+<h1>TEAM INSENSIBLE</h1>
+<p>FREE FIRE ESPORTS TEAM</p>
+</div>
+</header>
+
+<section class="hero">
+<h2>WELCOME TO TEAM INSENSIBLE</h2>
+<p>Official Free Fire Esports Team Website with Player Add System.</p>
+</section>
+
+<section class="players">
+<h2>TEAM PLAYERS</h2>
+
+<div class="grid" id="playerGrid">
+
+<div class="card">
+<img src="https://placehold.co/400x400/png">
+<div class="card-content">
+<h3>INS PLAYER</h3>
+<p>
+Role: Sniper<br>
+UID: 123456789<br>
+Country: Bangladesh<br>
+K/D: 5.0
+</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="add-player">
+<h2>ADD NEW PLAYER</h2>
+
+<div class="form">
+<input type="text" id="name" placeholder="Player Name">
+<input type="text" id="uid" placeholder="UID">
+<input type="text" id="role" placeholder="Role">
+<input type="text" id="country" placeholder="Country">
+<input type="text" id="kd" placeholder="K/D">
+<input type="text" id="image" placeholder="Player Image URL">
+
+<button onclick="addPlayer()">ADD PLAYER</button>
+</div>
+</section>
+
+<footer>
+© 2026 Team INSENSIBLE — All Rights Reserved.
+</footer>
+
+<script>
+function addPlayer(){
+const name=document.getElementById('name').value;
+const uid=document.getElementById('uid').value;
+const role=document.getElementById('role').value;
+const country=document.getElementById('country').value;
+const kd=document.getElementById('kd').value;
+const image=document.getElementById('image').value;
+
+if(name===""){
+alert("Enter player name");
+return;
+}
+
+const card=`
+<div class="card">
+<img src="${image || 'https://placehold.co/400x400/png'}">
+<div class="card-content">
+<h3>${name}</h3>
+<p>
+Role: ${role}<br>
+UID: ${uid}<br>
+Country: ${country}<br>
+K/D: ${kd}
+</p>
+</div>
+</div>
+`;
+
+document.getElementById('playerGrid').innerHTML += card;
+
+document.getElementById('name').value='';
+document.getElementById('uid').value='';
+document.getElementById('role').value='';
+document.getElementById('country').value='';
+document.getElementById('kd').value='';
+document.getElementById('image').value='';
+
+alert("Player Added Successfully!");
+}
+</script>
+
+</body>
+</html>
