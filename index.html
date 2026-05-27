@@ -1,0 +1,186 @@
+export default function TeamInsensibleWebsite() { const players = [ { name: "INS PLAYER 01", uid: "123456789", role: "IGL", country: "Bangladesh", device: "iPhone 14 Pro", kd: "4.8", image: "https://placehold.co/400x400/png", bio: "Team leader and tactical mastermind of Team INSENSIBLE." }, { name: "INS PLAYER 02", uid: "223456789", role: "Sniper", country: "Bangladesh", device: "ROG Phone", kd: "5.2", image: "https://placehold.co/400x400/png", bio: "Deadly sniper with fast reflexes and accurate aim." }, { name: "INS PLAYER 03", uid: "323456789", role: "Rusher", country: "Bangladesh", device: "iPhone 13", kd: "4.4", image: "https://placehold.co/400x400/png", bio: "Aggressive front-line attacker with fearless gameplay." }, { name: "INS PLAYER 04", uid: "423456789", role: "Support", country: "Bangladesh", device: "Samsung S24", kd: "3.9", image: "https://placehold.co/400x400/png", bio: "Reliable support player with excellent team coordination." }, { name: "INS PLAYER 05", uid: "523456789", role: "Assaulter", country: "Bangladesh", device: "iPad Pro", kd: "5.0", image: "https://placehold.co/400x400/png", bio: "High damage dealer with strong close-range skills." }, { name: "INS PLAYER 06", uid: "623456789", role: "Entry Fragger", country: "Bangladesh", device: "RedMagic", kd: "4.6", image: "https://placehold.co/400x400/png", bio: "Fast entry specialist known for explosive openings." } ];
+
+const posts = [ { title: "Team INSENSIBLE Joins New Tournament", description: "Our squad is officially participating in the upcoming Free Fire championship.", date: "2026" }, { title: "New Player Recruitment Open", description: "We are searching for talented Free Fire players to join our roster.", date: "2026" } ];
+
+return ( <div className="min-h-screen bg-black text-white font-sans"> <header className="border-b border-yellow-500/30 bg-gradient-to-r from-black via-zinc-900 to-black sticky top-0 z-50"> <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4"> <div className="flex items-center gap-4"> <img
+src="/mnt/data/1000065273.png"
+alt="Team INSENSIBLE Logo"
+className="w-14 h-14 rounded-xl object-cover"
+/> <div> <h1 className="text-2xl font-black tracking-widest text-yellow-400"> TEAM INSENSIBLE </h1> <p className="text-sm text-zinc-400">FREE FIRE ESPORTS TEAM</p> </div> </div>
+
+<nav className="hidden md:flex gap-8 text-sm font-semibold text-zinc-300">
+        <a href="#players" className="hover:text-yellow-400 transition">
+          Players
+        </a>
+        <a href="#posts" className="hover:text-yellow-400 transition">
+          Posts
+        </a>
+        <a href="#about" className="hover:text-yellow-400 transition">
+          About
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <section className="relative overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-b from-yellow-500/10 via-transparent to-transparent"></div>
+
+    <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span className="inline-block px-4 py-2 rounded-full border border-yellow-500 text-yellow-400 text-sm font-semibold mb-6">
+          OFFICIAL FREE FIRE ESPORTS TEAM
+        </span>
+
+        <h2 className="text-5xl md:text-7xl font-black leading-tight mb-6">
+          TEAM
+          <span className="text-yellow-400"> INSENSIBLE</span>
+        </h2>
+
+        <p className="text-zinc-400 text-lg leading-8 max-w-xl">
+          Competitive Free Fire Esports organization featuring skilled players,
+          tournament participation, player statistics, and team updates.
+        </p>
+
+        <div className="flex gap-4 mt-10 flex-wrap">
+          <button className="bg-yellow-500 text-black font-bold px-8 py-4 rounded-2xl hover:scale-105 transition">
+            Explore Team
+          </button>
+
+          <button className="border border-yellow-500 text-yellow-400 font-bold px-8 py-4 rounded-2xl hover:bg-yellow-500 hover:text-black transition">
+            Latest News
+          </button>
+        </div>
+      </div>
+
+      <div className="flex justify-center">
+        <div className="relative">
+          <div className="absolute inset-0 bg-yellow-500 blur-3xl opacity-20 rounded-full"></div>
+          <img
+            src="/mnt/data/1000065273.png"
+            alt="Team Logo"
+            className="relative w-[380px] max-w-full drop-shadow-[0_0_40px_rgba(255,215,0,0.4)]"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="players" className="max-w-7xl mx-auto px-6 py-20">
+    <div className="flex items-center justify-between mb-12 flex-wrap gap-4">
+      <div>
+        <h3 className="text-4xl font-black text-yellow-400">TEAM PLAYERS</h3>
+        <p className="text-zinc-400 mt-2">
+          Official roster of Team INSENSIBLE.
+        </p>
+      </div>
+
+      <div className="text-sm text-zinc-500">
+        You can later replace these players with your own data.
+      </div>
+    </div>
+
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {players.map((player, index) => (
+        <div
+          key={index}
+          className="bg-zinc-900 border border-yellow-500/20 rounded-3xl overflow-hidden hover:border-yellow-400 transition duration-300 hover:-translate-y-2"
+        >
+          <img
+            src={player.image}
+            alt={player.name}
+            className="w-full h-72 object-cover"
+          />
+
+          <div className="p-6 space-y-3">
+            <div className="flex items-center justify-between">
+              <h4 className="text-2xl font-black text-yellow-400">
+                {player.name}
+              </h4>
+
+              <span className="text-xs bg-yellow-500 text-black px-3 py-1 rounded-full font-bold">
+                {player.role}
+              </span>
+            </div>
+
+            <p className="text-zinc-400 text-sm leading-7">
+              {player.bio}
+            </p>
+
+            <div className="grid grid-cols-2 gap-4 pt-4 text-sm">
+              <div className="bg-black rounded-2xl p-3 border border-zinc-800">
+                <p className="text-zinc-500">UID</p>
+                <p className="font-bold">{player.uid}</p>
+              </div>
+
+              <div className="bg-black rounded-2xl p-3 border border-zinc-800">
+                <p className="text-zinc-500">K/D</p>
+                <p className="font-bold">{player.kd}</p>
+              </div>
+
+              <div className="bg-black rounded-2xl p-3 border border-zinc-800">
+                <p className="text-zinc-500">Country</p>
+                <p className="font-bold">{player.country}</p>
+              </div>
+
+              <div className="bg-black rounded-2xl p-3 border border-zinc-800">
+                <p className="text-zinc-500">Device</p>
+                <p className="font-bold">{player.device}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="posts" className="bg-zinc-950 border-y border-yellow-500/10">
+    <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="mb-12">
+        <h3 className="text-4xl font-black text-yellow-400">LATEST POSTS</h3>
+        <p className="text-zinc-400 mt-2">
+          Team announcements, tournament updates, and news.
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-8">
+        {posts.map((post, index) => (
+          <div
+            key={index}
+            className="bg-black border border-zinc-800 rounded-3xl p-8 hover:border-yellow-500/40 transition"
+          >
+            <span className="text-yellow-400 text-sm font-semibold">
+              {post.date}
+            </span>
+
+            <h4 className="text-2xl font-black mt-4 mb-4">
+              {post.title}
+            </h4>
+
+            <p className="text-zinc-400 leading-8">
+              {post.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="about" className="max-w-5xl mx-auto px-6 py-20 text-center">
+    <h3 className="text-4xl font-black text-yellow-400 mb-6">
+      ABOUT TEAM INSENSIBLE
+    </h3>
+
+    <p className="text-zinc-400 leading-9 text-lg">
+      Team INSENSIBLE is a competitive Free Fire esports team dedicated to
+      professional gameplay, tournaments, teamwork, and community growth.
+      This website is designed to showcase player profiles, updates, and
+      achievements in a premium gaming-style experience.
+    </p>
+  </section>
+
+  <footer className="border-t border-yellow-500/20 bg-black py-8 text-center text-zinc-500 text-sm">
+    © 2026 Team INSENSIBLE — All Rights Reserved.
+  </footer>
+</div>
+
+); }
